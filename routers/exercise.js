@@ -30,7 +30,7 @@ router.post("/api/exercise/add", async (req, res) => {
       description: await exercise.description,
       duration: await exercise.duration,
       _id: await user._id,
-      date: await exercise.date,
+      date: await exercise.date.toDateString(),
     });
   } catch (error) {
     res.status(400).send(error.message);
